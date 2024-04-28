@@ -24,7 +24,10 @@ Route::resource('productos', 'ProductoController');
 Route::resource('proveedores', 'ProveedorController');
 Route::resource('ordenes-compra', 'OrdenCompraController');
 
+Route::middleware(['auth'])->group(function () {
 Route::resource('productos', ProductoController::class);
 Route::resource('proveedores', ProveedorController::class);
 Route::resource('ordenes-compra', OrdenCompraController::class);
+
+});
 
